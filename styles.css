@@ -1,0 +1,80 @@
+/* Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  overflow-y: hidden;
+}
+
+/* full screen */
+textarea {
+  resize: none;
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 10px 3px;
+  font-family: inherit;
+  white-space: pre-line;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+/* dark-mode thin scrollbar for document */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4d4c4c;
+}
+
+.about-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}

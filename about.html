@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Electron Editor | About</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="about-container">
+      <h2>Built by:</h2>
+      <h2 id="animated-name">Vishnu Sai Bhosekar</h2>
+      <p>
+        <span class="blink">⚡</span>For the love of Electron<span class="blink"
+          >⚡</span
+        >
+      </p>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var name = $("#animated-name").text();
+        var letters = name.split("");
+        $("#animated-name").html("");
+        letters.forEach(function (letter) {
+          var span = $("<span>").text(letter);
+          $("#animated-name").append(span);
+        });
+
+        $("#animated-name span").each(function (index) {
+          $(this).css({
+            display: "inline-block",
+            "animation-delay": 0.1 * index + "s", // Stagger the animation
+            animation: "fall 0.5s ease forwards",
+            opacity: "0",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
